@@ -70,14 +70,20 @@ def entertainment_generator(entertainment_selector):
 verified_entertainment = entertainment_generator(form_of_entertainment)
 
 
+
 def itinerary_generator():
     print(f"Awesome! Now that you have selected everything for your upcoming trip, here is your itinerary:\nDestination: {verified_destination}\nRestaurant: {verified_restaurant}\nTransportation: {verified_transportation}\nEntertainment: {verified_entertainment}")
     final_user_input = input("Does your itinerary suit your fancy? If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
-    while ():
-        if final_user_input == "y":
-            print("Awesome! All thats left to do now is pack and get on over there!")
-        elif final_user_input == "n":
-            return itinerary_generator()
+    if final_user_input == "y":
+        print("Awesome! All thats left to do now is pack and get on over there!")
+    elif final_user_input == "n":
+        return final_generator()
 
+def final_generator():
+    destination_generator(list_of_destinations)
+    restaurant_generator(list_of_restaurants)
+    transportation_generator(mode_of_transportation)
+    entertainment_generator(form_of_entertainment)
+    itinerary_generator()
 
-itinerary_generator()
+final_generator()
