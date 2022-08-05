@@ -1,5 +1,4 @@
 import random
-from tkinter import Y
 
 list_of_destinations = ["St. Petersburg", "New York City", "Los Angeles", "Tuscon", "Moab"]
 list_of_restaurants = ["Bodega", "Peking Duck House", "Republique" , "Kingfisher", "Moab Brewery"]
@@ -22,13 +21,3 @@ def destination_generator(destination_selector):
 verified_destination = destination_generator(list_of_destinations)
 print(verified_destination)
     
-    
-    # random_destination = random.choices(destination_selector, k = 1)
-    # print(random_destination)
-    # destination = input("Is this a destination you would like to visit? If so, type 'y' for 'Yes' or 'n' for 'No.'").lower()
-    # if destination == "y":
-    #     chosen_destination = (f"Perfect, {destination} is where you're headed!")
-    #     return chosen_destination
-    # elif destination == "n":
-    #     destination = input("Does this destination sound more enticing?  If so, type 'y' for 'Yes' or 'n' for 'No.'").lower()
-        
