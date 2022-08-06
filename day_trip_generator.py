@@ -86,4 +86,4 @@ def final_generator():
     entertainment_generator(form_of_entertainment)
     itinerary_generator()
 
-final_generator()
+itinerary_generator()
