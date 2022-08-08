@@ -19,7 +19,7 @@ def destination_generator(destination_selector):
             print(random_destination[0])
             destination = input("Does this destination sound more enticing?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
             
-verified_destination = destination_generator(list_of_destinations)
+# verified_destination = destination_generator(list_of_destinations)
 
     
 def restaurant_generator(restaurant_selector):
@@ -35,7 +35,7 @@ def restaurant_generator(restaurant_selector):
             print(random_restaurant[0])
             restaurant = input("Does this restaurant seem more appealing?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
 
-verified_restaurant = restaurant_generator(list_of_restaurants)
+# verified_restaurant = restaurant_generator(list_of_restaurants)
 
 
 def transportation_generator(transportation_selector):
@@ -51,7 +51,7 @@ def transportation_generator(transportation_selector):
             print(random_transportation[0])
             transportation = input("Does this mode of transportation sound better?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
 
-verified_transportation = transportation_generator(mode_of_transportation)
+# verified_transportation = transportation_generator(mode_of_transportation)
 
 
 def entertainment_generator(entertainment_selector):
@@ -67,6 +67,9 @@ def entertainment_generator(entertainment_selector):
             print(random_entertainment[0])
             entertainment = input("Does this seem like an activity you'd enjoy more?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
 
+verified_destination = destination_generator(list_of_destinations)
+verified_restaurant = restaurant_generator(list_of_restaurants)
+verified_transportation = transportation_generator(mode_of_transportation)
 verified_entertainment = entertainment_generator(form_of_entertainment)
 
 
