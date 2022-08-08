@@ -1,6 +1,6 @@
 import random
 
-def list_collection(index_of_list):
+def list_choice(index_of_list):
     list_of_destinations = ["St. Petersburg", "New York City", "Los Angeles", "Tuscon", "Moab"]
     list_of_restaurants = ["Bodega", "Peking Duck House", "Republique" , "Kingfisher", "Moab Brewery"]
     mode_of_transportation = ["Rental Car", "Uber", "Public Transportation", "Walking"]
@@ -8,76 +8,95 @@ def list_collection(index_of_list):
     master_list = [list_of_destinations, list_of_restaurants, mode_of_transportation, form_of_entertainment]
     return master_list[index_of_list]
 
-chosen_list = list_collection(3)
+
+def randomizer(random_selector):
+    from_random_list = random.choices(random_selector, k = 1)
+    return from_random_list[0]
 
 
-def destination_generator(destination_selector):
-    random_destination = random.choices(destination_selector, k = 1)
-    print(random_destination[0])
+def destination_choice_evaluator(destination_choice):
+    print(destination_choice)
+    location = destination_choice
     destination = input("Is this a destination you would like to visit? If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
-    while destination_selector:
+    while destination_choice:
         if destination == "y" or destination == "yes":
-            print(f"Perfect, {random_destination[0]} is where you're headed!")
-            return random_destination[0]
+            print(f"Perfect, {location} is where you're headed!")
+            return location
         elif destination == "n" or destination == "no":
-            random_destination = random.choices(destination_selector, k = 1)
-            print(random_destination[0])
+            new_location = randomizer(list_choice(0))
+            print(new_location)
             destination = input("Does this destination sound more enticing?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
-            
-
+            if destination == "y" or destination == "yes":
+                print(f"Perfect, {new_location} is where you're headed!")
+                return new_location
     
-def restaurant_generator(restaurant_selector):
-    random_restaurant = random.choices(restaurant_selector, k = 1)
-    print(random_restaurant[0])
+def restaurant_choice_evaluator(restaurant_choice):
+    print(restaurant_choice)
+    eatery = restaurant_choice
     restaurant = input("Does this restuarant sound appetizing to you? If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
-    while restaurant_selector:
+    while restaurant_choice:
         if restaurant == "y" or restaurant == "yes":
-            print(f"Perfect, {random_restaurant[0]} is where you'll be dining!")
-            return random_restaurant[0]
+            print(f"Perfect, {eatery} is where you'll be dining!")
+            return eatery
         elif restaurant == "n" or restaurant == "no":
-            random_restaurant = random.choices(restaurant_selector, k = 1)
-            print(random_restaurant[0])
-            restaurant = input("Does this restaurant seem more appealing?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
+            new_eatery = randomizer(list_choice(1))
+            print(new_eatery)
+            restaurant = input("Does this restaurant sound more appetizing to you?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
+            if restaurant == "y" or restaurant == "yes":
+                print(f"Perfect, {new_eatery} is where you're headed!")
+                return new_eatery
 
 
 
-def transportation_generator(transportation_selector):
-    random_transportation = random.choices(transportation_selector, k = 1)
-    print(random_transportation[0])
+def transportation_choice_evaluator(transportation_choice):
+    print(transportation_choice)
+    movement = transportation_choice
     transportation = input("Is this how you'd prefer to get around town? If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
-    while transportation_selector:
+    while transportation_choice:
         if transportation == "y" or transportation == "yes":
-            print(f"Perfect, {random_transportation[0]} is how you'll be getting around town!")
-            return random_transportation[0]
+            print(f"Perfect, {movement} is how you'll be getting around town!")
+            return movement
         elif transportation == "n" or transportation == "no":
-            random_transportation = random.choices(transportation_selector, k = 1)
-            print(random_transportation[0])
-            transportation = input("Does this mode of transportation sound better?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
+            new_movement = randomizer(list_choice(2))
+            print(new_movement)
+            transportation = input("Does this restaurant sound more appetizing to you?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
+            if transportation == "y" or transportation == "yes":
+                print(f"Perfect, {new_movement} is how you'll be getting around!")
+                return new_movement
 
 
 
-def entertainment_generator(entertainment_selector):
-    random_entertainment = random.choices(entertainment_selector, k = 1)
-    print(random_entertainment[0])
+def entertainment_choice_evaluator(entertainment_choice):
+    print(entertainment_choice)
+    amusement = entertainment_choice
     entertainment = input("Does this sound like something you'd enjoy doing? If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
-    while entertainment_selector:
+    while entertainment_choice:
         if entertainment == "y" or entertainment == "yes":
-            print(f"Perfect, {random_entertainment[0]} is how you'll be spending your time while you're there!")
-            return random_entertainment[0]
+            print(f"Perfect, {amusement} is how you'll be spending your time while you're there!")
+            return amusement
         elif entertainment == "n" or entertainment == "no":
-            random_entertainment = random.choices(entertainment_selector, k = 1)
-            print(random_entertainment[0])
-            entertainment = input("Does this seem like an activity you'd enjoy more?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
+            new_amusement = randomizer(list_choice(3))
+            print(new_amusement)
+            transportation = input("Does this activity sound more enjoyable?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
+            if transportation == "y" or transportation == "yes":
+                print(f"Perfect, {new_amusement} is how you'll be spending your time!")
+                return new_amusement
 
-verified_destination = destination_generator(list_collection(0))
-verified_restaurant = restaurant_generator(list_collection(1))
-verified_transportation = transportation_generator(list_collection(2))
-verified_entertainment = entertainment_generator(list_collection(3))
+
+destination_list = randomizer(list_choice(0))
+restaurant_list = randomizer(list_choice(1))
+transportation_list = randomizer(list_choice(2))
+entertainment_list = randomizer(list_choice(3))
+
+chosen_destination = destination_choice_evaluator(destination_list)
+chosen_restaurant = restaurant_choice_evaluator(restaurant_list)
+chosen_transportation = transportation_choice_evaluator(transportation_list)
+chosen_entertainment = entertainment_choice_evaluator(entertainment_list)
 
 
 
 def itinerary_generator():
-    print(f"Awesome! Now that you have selected everything for your upcoming trip, here is your itinerary:\nDestination: {verified_destination}\nRestaurant: {verified_restaurant}\nTransportation: {verified_transportation}\nEntertainment: {verified_entertainment}")
+    print(f"Awesome! Now that you have selected everything for your upcoming trip, here is your itinerary:\nDestination: {chosen_destination}\nRestaurant: {chosen_restaurant}\nTransportation: {chosen_transportation}\nEntertainment: {chosen_entertainment}")
     final_user_input = input("Does your itinerary suit your fancy? If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
     if final_user_input == "y" or final_user_input == "yes":
         print("Awesome! All thats left to do now is pack and get on over there!")
@@ -85,10 +104,15 @@ def itinerary_generator():
         return final_generator()
 
 def final_generator():
-    destination_generator(list_collection(0))
-    restaurant_generator(list_collection(1))
-    transportation_generator(list_collection(2))
-    entertainment_generator(list_collection(3))
+    destination_list = randomizer(list_choice(0))
+    restaurant_list = randomizer(list_choice(1))
+    transportation_list = randomizer(list_choice(2))
+    entertainment_list = randomizer(list_choice(3))
+
+    chosen_destination = destination_choice_evaluator(destination_list)
+    chosen_restaurant = restaurant_choice_evaluator(restaurant_list)
+    chosen_transportation = transportation_choice_evaluator(transportation_list)
+    chosen_entertainment = entertainment_choice_evaluator(entertainment_list)
     itinerary_generator()
 
 itinerary_generator()
