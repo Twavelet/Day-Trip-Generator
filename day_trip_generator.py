@@ -1,9 +1,14 @@
 import random
 
-list_of_destinations = ["St. Petersburg", "New York City", "Los Angeles", "Tuscon", "Moab"]
-list_of_restaurants = ["Bodega", "Peking Duck House", "Republique" , "Kingfisher", "Moab Brewery"]
-mode_of_transportation = ["Rental Car", "Uber", "Public Transportation", "Walking"]
-form_of_entertainment = ["Movie Theater", "Concert", "Hiking", "Museums", "Camping"]
+def list_collection(index_of_list):
+    list_of_destinations = ["St. Petersburg", "New York City", "Los Angeles", "Tuscon", "Moab"]
+    list_of_restaurants = ["Bodega", "Peking Duck House", "Republique" , "Kingfisher", "Moab Brewery"]
+    mode_of_transportation = ["Rental Car", "Uber", "Public Transportation", "Walking"]
+    form_of_entertainment = ["Movie Theater", "Concert", "Hiking", "Museums", "Camping"]
+    master_list = [list_of_destinations, list_of_restaurants, mode_of_transportation, form_of_entertainment]
+    return master_list[index_of_list]
+
+chosen_list = list_collection(3)
 
 
 def destination_generator(destination_selector):
@@ -19,7 +24,6 @@ def destination_generator(destination_selector):
             print(random_destination[0])
             destination = input("Does this destination sound more enticing?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
             
-# verified_destination = destination_generator(list_of_destinations)
 
     
 def restaurant_generator(restaurant_selector):
@@ -35,7 +39,6 @@ def restaurant_generator(restaurant_selector):
             print(random_restaurant[0])
             restaurant = input("Does this restaurant seem more appealing?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
 
-# verified_restaurant = restaurant_generator(list_of_restaurants)
 
 
 def transportation_generator(transportation_selector):
@@ -51,7 +54,6 @@ def transportation_generator(transportation_selector):
             print(random_transportation[0])
             transportation = input("Does this mode of transportation sound better?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
 
-# verified_transportation = transportation_generator(mode_of_transportation)
 
 
 def entertainment_generator(entertainment_selector):
@@ -67,10 +69,10 @@ def entertainment_generator(entertainment_selector):
             print(random_entertainment[0])
             entertainment = input("Does this seem like an activity you'd enjoy more?  If so, type 'y' for 'Yes' or 'n' for 'No.' ").lower()
 
-verified_destination = destination_generator(list_of_destinations)
-verified_restaurant = restaurant_generator(list_of_restaurants)
-verified_transportation = transportation_generator(mode_of_transportation)
-verified_entertainment = entertainment_generator(form_of_entertainment)
+verified_destination = destination_generator(list_collection(0))
+verified_restaurant = restaurant_generator(list_collection(1))
+verified_transportation = transportation_generator(list_collection(2))
+verified_entertainment = entertainment_generator(list_collection(3))
 
 
 
@@ -83,10 +85,10 @@ def itinerary_generator():
         return final_generator()
 
 def final_generator():
-    destination_generator(list_of_destinations)
-    restaurant_generator(list_of_restaurants)
-    transportation_generator(mode_of_transportation)
-    entertainment_generator(form_of_entertainment)
+    destination_generator(list_collection(0))
+    restaurant_generator(list_collection(1))
+    transportation_generator(list_collection(2))
+    entertainment_generator(list_collection(3))
     itinerary_generator()
 
 itinerary_generator()
